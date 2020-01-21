@@ -4,12 +4,11 @@ from itertools import permutations
 
 
 def main():
-    print(next_biggest_number(sys.argv[1]))
+    next_biggest_number(sys.argv[1])
 
 
 
 def next_biggest_number(num):
-    #TODO: Implement me!
     num = int(num)
     minimum_difference = 100000
     saved_index = -1
@@ -26,19 +25,12 @@ def next_biggest_number(num):
     
     possible_answers = possible_answers[1:]
 
-    
     for idx in range(len(possible_answers)):
         if possible_answers[idx] - num < minimum_difference and possible_answers[idx] - num > 0:
             minimum_difference = possible_answers[idx] - num
             saved_index = idx
 
     return possible_answers[saved_index]
-
-def swap_digits(arr, x, y):
-    print(arr[x], arr[y])
-    if arr[x] > arr[y]:
-        return True
-    return False
 
 def convert_to_array(num):
     arr = []
@@ -62,8 +54,6 @@ def is_sorted_desc(lst):
         if lst[idx+1] > lst[idx]:
             return False
     return True
-
-
 
 if __name__ == "__main__":
     main()
